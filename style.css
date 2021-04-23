@@ -14,9 +14,10 @@
     border-right: 1px solid rgb(203, 166, 117);
     border-bottom: 1px solid rgb(203, 166, 117);
     position: relative;
-    cursor: pointer;
+    /* cursor: pointer; */
     box-shadow: 0px 5px 20px rgb(18, 18, 21) ;
 }
+
 .box-inner {
     position: absolute;
     height: 100%;
@@ -24,6 +25,7 @@
     top: 0;
     left: 0;
     background-color: rgb(203, 166, 117);
+    cursor: pointer;
     
 }
 .left {
@@ -52,7 +54,7 @@
     width: 100px;
     background-color: rgb(203, 166, 117); 
     position:absolute;
-    left: 300px;
+    right: -100px;
     transform: rotate(45deg);
     transform-origin: center left;
     animation: down-up 2s forwards infinite alternate;
@@ -72,9 +74,27 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    max-height: 100%;
     transform: translate(-50%, -50%);
     transition: transform 2s; 
 }
 .box-clicked .image {
     transform: translate(-50%, -100%);
+}
+@media screen and (max-width: 570px) {
+    .box{
+        width:220px;
+        height:200px;
+    }
+    .left{
+        width: 50px;
+        left: -50px;
+    }
+    .right{
+        width: 50px;
+        right: -50px;
+    }
+    .box-inner{
+        cursor: none;
+    }
 }
